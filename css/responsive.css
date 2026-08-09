@@ -1,0 +1,98 @@
+@media (min-width: 1121px) {
+  .practice-case-shell {
+    padding-top: 4.625rem;
+  }
+
+  .practice-case-hero {
+    padding-top: clamp(3rem, 4.7vw, 4.8rem);
+  }
+
+  .practice-case-title {
+    margin: 0;
+    letter-spacing: 0.05em;
+  }
+
+  .practice-branch-row {
+    max-width: min(100%, 82rem);
+  }
+
+  .practice-branch-card {
+    min-height: 91px;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .practice-branch-image {
+    top: -0.75rem;
+    right: 2.5rem;
+    bottom: auto;
+  }
+
+  .practice-branch-check {
+    right: 11px;
+    bottom: 10px;
+  }
+
+  .practice-hero-grid {
+    margin-top: clamp(2.2rem, 4vw, 4.6rem);
+  }
+
+  .practice-need-grid {
+    gap: 24px;
+  }
+
+  .practice-need-card {
+    min-height: 258px;
+  }
+}
+
+.home-view,
+.module-body {
+  min-width: var(--viewport-min);
+}
+
+.module-header {
+  min-width: var(--viewport-page-inner);
+}
+
+.keyword-row {
+  max-width: none;
+}
+
+#lab .module-header {
+  min-width: var(--viewport-lab-nav);
+}
+
+#lab .module-body {
+  min-width: var(--viewport-lab-body);
+}
+
+.practice-case-nav,
+.practice-case-hero,
+.practice-stage-stack {
+  min-width: var(--viewport-practice-wide);
+}
+
+.creation-platform-nav,
+#creation-platform-root {
+  min-width: var(--viewport-practice-wide);
+}
+
+.practice-edu-modal-dialog {
+  min-width: 1120px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

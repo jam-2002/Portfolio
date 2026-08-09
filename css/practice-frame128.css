@@ -1,0 +1,882 @@
+/* Product-practice glass system, aligned with Creation Platform and Digital Art. */
+.practice-case-view {
+  --practice-card-bg: rgba(255, 255, 255, 0.15);
+  --practice-content-card-bg: rgba(255, 255, 255, 0.3);
+  --practice-branch-card-bg: rgba(255, 255, 255, 0.15);
+  --practice-shadow: 0 12px 24px rgba(114, 128, 157, 0.05);
+  --practice-shadow-strong: var(--practice-shadow);
+}
+
+.practice-case-view .practice-stage-panel {
+  background:
+    rgba(255, 255, 255, 0.15) padding-box,
+    var(--glass-border-gradient) border-box;
+  box-shadow:
+    0 12px 24px rgba(114, 128, 157, 0.05),
+    inset 0 0 5px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(100%);
+  -webkit-backdrop-filter: blur(20px) saturate(100%);
+}
+
+.practice-case-view :is(
+  .practice-info-card,
+  .practice-edu-info-card,
+  .practice-branch-card:not(.practice-branch-artwork)
+) {
+  background:
+    rgba(255, 255, 255, 0.15) padding-box,
+    var(--glass-border-gradient) border-box;
+  box-shadow:
+    0 12px 24px rgba(114, 128, 157, 0.05),
+    inset 0 0 5px 3px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.practice-case-view :is(
+  .practice-need-card,
+  .practice-inner-card,
+  .practice-edu-glass-card,
+  .practice-edu-map-card,
+  .practice-edu-pdf-card
+) {
+  border: 1px solid transparent;
+  border-radius: 24px;
+  background:
+    rgba(255, 255, 255, 0.3) padding-box,
+    var(--glass-border-gradient) border-box;
+  box-shadow:
+    0 12px 24px rgba(114, 128, 157, 0.05),
+    inset 0 0 5px 3px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.practice-case-view :is(
+  .practice-tag-row span,
+  .practice-scenario,
+  .practice-edu-combo-badge
+) {
+  border: 1.5px solid transparent;
+  border-radius: var(--r-pill);
+  background:
+    rgba(255, 255, 255, 0.15) padding-box,
+    var(--glass-border-gradient) border-box;
+  box-shadow:
+    0 12px 24px rgba(114, 128, 157, 0.05),
+    inset 0 0 5px 3px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Frame 128: keep the existing navigation placement, align everything below it. */
+.practice-case-view.is-dental .practice-case-hero {
+  --practice-hero-grid-bottom: 0px;
+  padding: 100px 0 0;
+}
+
+.practice-case-view.is-dental .practice-case-title {
+  height: 60px;
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.5;
+}
+
+.practice-case-view.is-dental .practice-branch-row {
+  width: 1054px;
+  height: 105px;
+  grid-template-columns: 473px 473px;
+  gap: 108px;
+  max-width: none;
+  margin: 14px 0 0;
+}
+
+.practice-case-view.is-dental .practice-branch-card {
+  width: 473px;
+}
+
+.practice-case-view.is-dental .practice-branch-artwork {
+  height: 105px;
+  overflow: hidden;
+}
+
+.practice-case-view.is-dental .practice-branch-artwork img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.practice-case-view.is-dental .practice-hero-grid {
+  height: 400px;
+  grid-template-columns: 628px 370px 345px;
+  column-gap: 72px;
+  align-items: center;
+  justify-content: start;
+  margin-top: 100px;
+}
+
+.practice-case-view.is-dental .practice-hero-copy {
+  width: 628px;
+  align-self: center;
+}
+
+.practice-case-view.is-dental .practice-hero-copy h1 {
+  font-size: 40px;
+  line-height: 1.5;
+}
+
+.practice-case-view.is-dental .practice-hero-copy > p {
+  width: 628px;
+  max-width: none;
+  margin-top: 21px;
+  line-height: 2;
+}
+
+.practice-case-view.is-dental .practice-tag-row {
+  gap: 26px;
+  margin-top: 42px;
+}
+
+.practice-case-view.is-dental .practice-tag-row span {
+  flex: 0 0 136.85px;
+}
+
+.practice-case-view.is-dental .practice-product-visual {
+  width: 370px;
+  height: 400px;
+  min-height: 400px;
+  align-self: center;
+  transform: none;
+}
+
+.practice-case-view.is-dental .practice-info-card {
+  width: 345px;
+  height: 291px;
+  min-height: 291px;
+  align-self: center;
+}
+
+.practice-case-view.is-dental .practice-stage-stack {
+  margin-top: 0;
+}
+
+.practice-case-view.is-dental .practice-stage-analysis .practice-section-header {
+  left: 43px;
+  top: 34px;
+  gap: 15px;
+}
+
+.practice-case-view.is-dental .practice-stage-analysis .practice-stage-panel {
+  height: 397px;
+  min-height: 397px;
+  grid-template-columns: 507px 772px;
+  gap: 132px;
+  align-items: start;
+  padding: 101px 37px 36px 42px;
+}
+
+.practice-case-view.is-dental .practice-analysis-copy > p {
+  margin-top: 10px;
+  line-height: 2;
+}
+
+.practice-case-view.is-dental .practice-scenario {
+  margin-top: 10px;
+}
+
+.practice-case-view.is-dental .practice-need-grid {
+  grid-template-columns: repeat(4, 178px);
+  gap: 20px;
+}
+
+.practice-case-view.is-dental .practice-need-card {
+  width: 178px;
+  height: 258px;
+  min-height: 258px;
+}
+
+/* Frame 153: second card / 功能定义. */
+.practice-case-view.is-dental .practice-stage-analysis + .practice-stage-definition {
+  margin-top: calc(60px - clamp(1.6rem, 2vw, 2.25rem));
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-section-header {
+  left: 45px;
+  top: 40px;
+  gap: 9px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-stage-panel {
+  width: 100%;
+  height: 632px;
+  min-height: 632px;
+  grid-template-columns: 618px 716px;
+  gap: 71px;
+  align-items: start;
+  padding: 111px 41px 51px 44px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-inner-card {
+  height: 468px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-hardware-card {
+  padding: 24px 33px 32px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-software-card {
+  padding: 25px 22px 54px 26px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-card-target {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-hardware-body,
+.practice-case-view.is-dental .practice-stage-definition .practice-software-body {
+  position: relative;
+  display: block;
+  margin-top: 24px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-hardware-body {
+  width: 550px;
+  height: 308px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-software-body {
+  width: 666px;
+  height: 285px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-numbered-list {
+  position: relative;
+  z-index: 2;
+  width: 301px;
+  gap: 30px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-software-body .practice-numbered-list {
+  width: 400px;
+  gap: 20px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-numbered-item {
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 17px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-numbered-item h4 {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-numbered-item p {
+  max-width: none;
+  margin-top: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-software-body .practice-numbered-item > span {
+  margin-top: 3px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-hardware-figure,
+.practice-case-view.is-dental .practice-stage-definition .practice-software-figure {
+  position: absolute;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-hardware-figure {
+  left: 273px;
+  top: 2px;
+  width: 277px;
+  height: 304px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-software-figure {
+  left: 340px;
+  top: 16px;
+  width: 308px;
+  height: 231px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-hardware-figure.is-annotated img,
+.practice-case-view.is-dental .practice-stage-definition .practice-software-figure img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* Frame 176: third card / 产品设计. */
+.practice-case-view.is-dental .practice-stage-definition + .practice-stage-design {
+  margin-top: calc(60px - clamp(1.6rem, 2vw, 2.25rem));
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-section-header {
+  left: 45px;
+  top: 35px;
+  gap: 9px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-stage-panel {
+  width: 100%;
+  height: 738px;
+  min-height: 738px;
+  grid-template-rows: 285px 296px;
+  gap: 24px;
+  padding: 106px 34px 25px 44px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-flow-card {
+  width: 1412px;
+  height: 285px;
+  padding: 28px 51px 31px 38px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-flow-card > p {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow {
+  --practice-flow-gap: 156px;
+  --practice-flow-arrow-size: 40px;
+  height: 122px;
+  grid-template-columns: 82px 90px 95px 75px 76px 123px;
+  gap: 156px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item {
+  position: relative;
+  width: 100%;
+  height: 122px;
+  display: block;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item img {
+  position: absolute;
+  left: 50%;
+  display: block;
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(1) img {
+  top: 5.5px;
+  width: 82px;
+  height: 79px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(2) img {
+  top: 3.5px;
+  width: 90px;
+  height: 84px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(3) img {
+  top: 3px;
+  width: 72px;
+  height: 85px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(4) img {
+  top: 2px;
+  width: 75px;
+  height: 84px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(5) img {
+  top: 0.5px;
+  width: 76px;
+  height: 85px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(6) img {
+  top: 0;
+  width: 85px;
+  height: 85px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item h4 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: var(--practice-gray);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(1) h4 {
+  top: 98.5px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(2) h4,
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(3) h4 {
+  top: 82.5px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(4) h4 {
+  top: 84px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(5) h4 {
+  top: 85.5px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:nth-child(6) h4 {
+  top: 86px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:not(:last-child)::after {
+  left: calc(100% + 58px);
+  top: 41px;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  transform: none;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-design-grid {
+  width: 1412px;
+  height: 296px;
+  grid-template-columns: 456px 456px 422px;
+  grid-template-rows: 176px 105px;
+  column-gap: 39px;
+  row-gap: 15px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-prototype-card {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 456px;
+  height: 296px;
+  padding: 24px 31px 20px 20px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-design-card.has-split-text {
+  grid-column: 2;
+  grid-row: 1;
+  width: 456px;
+  height: 176px;
+  padding: 21px 36px 22px 28px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-design-card:not(.practice-prototype-card):not(.practice-metrics-card):not(.has-split-text) {
+  grid-column: 2;
+  grid-row: 2;
+  width: 456px;
+  height: 105px;
+  padding: 12px 28px 15px 20px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-metrics-card {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  width: 422px;
+  height: 296px;
+  padding: 22px 18px 16px 20px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-prototype-card .practice-icon-text:first-of-type {
+  margin-top: 24px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-prototype-card .practice-icon-text + .practice-icon-text {
+  margin-top: 24px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-icon-text {
+  row-gap: 12px;
+  column-gap: 11px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-icon-text strong,
+.practice-case-view.is-dental .practice-stage-design .practice-icon-text p {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-design-note {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-design-card.has-split-text .practice-design-lead {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-design-card.has-split-text .practice-design-detail {
+  margin-top: 0;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-design-card:not(.practice-prototype-card):not(.practice-metrics-card):not(.has-split-text) > p,
+.practice-case-view.is-dental .practice-stage-design .practice-metrics-card > p {
+  margin-top: 24px;
+  color: var(--practice-black);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-metrics-list {
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: 12px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-metrics-list span,
+.practice-case-view.is-dental .practice-stage-design .practice-metrics-list span:nth-child(n + 5) {
+  grid-column: 1;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+/* Frame 191: fourth card / 产品上线与迭代. */
+.practice-case-view.is-dental .practice-stage-design + .practice-stage-launch {
+  margin-top: calc(60px - clamp(1.6rem, 2vw, 2.25rem));
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-section-header {
+  left: 45px;
+  top: 43px;
+  gap: 9px;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-stage-panel {
+  width: 100%;
+  height: 624px;
+  min-height: 624px;
+  grid-template-rows: 266px 178px;
+  gap: 24px;
+  padding: 114px 33px 40px 44px;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow-card {
+  width: 1413px;
+  height: 266px;
+  padding: 36px 19px 35px 24px;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow {
+  --practice-flow-gap: 72px;
+  --practice-flow-arrow-size: 40px;
+  height: 139px;
+  grid-template-columns: 165px 200px 164px 127px 182px 153px;
+  gap: 72px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item {
+  width: 100%;
+  height: 139px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item img {
+  width: 75px;
+  height: 75px;
+  flex: 0 0 75px;
+  object-fit: contain;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item:nth-child(1) img {
+  width: 74px;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item:nth-child(2) img,
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item:nth-child(3) img,
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item:nth-child(6) img {
+  width: 73px;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item h4,
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item p {
+  width: 100%;
+  color: var(--practice-black);
+  font-size: 16px;
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item p {
+  color: var(--practice-gray);
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item:not(:last-child)::after {
+  left: calc(100% + 16px);
+  top: 49.5px;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  transform: none;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-maintenance-card {
+  width: 1413px;
+  height: 178px;
+  min-height: 178px;
+  padding: 32px 198px 30px 24px;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-maintenance-card h3,
+.practice-case-view.is-dental .practice-stage-launch .practice-maintenance-card > p,
+.practice-case-view.is-dental .practice-stage-launch .practice-table-line {
+  width: 1175px;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-maintenance-card > p {
+  margin-top: 24px;
+  color: var(--practice-black);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-table-line {
+  margin-top: 12px;
+  color: var(--practice-gray);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+/* Shared-width correction: all dental content follows the navigation width. */
+.practice-case-view.is-dental :is(.practice-case-hero, .practice-stage-stack) {
+  width: min(88.8vw, 1484px);
+}
+
+.practice-case-view.is-dental .practice-branch-row {
+  height: 128px;
+  margin-left: -22px;
+}
+
+.practice-case-view.is-dental .practice-branch-artwork {
+  height: auto;
+  overflow: visible;
+}
+
+.practice-case-view.is-dental .practice-branch-artwork img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.practice-case-view.is-dental .practice-hero-grid {
+  grid-template-columns: minmax(0, 628fr) minmax(260px, 370fr) minmax(300px, 345fr);
+  column-gap: clamp(20px, 4.3vw, 72px);
+}
+
+.practice-case-view.is-dental .practice-hero-copy,
+.practice-case-view.is-dental .practice-hero-copy > p,
+.practice-case-view.is-dental .practice-product-visual,
+.practice-case-view.is-dental .practice-info-card {
+  width: 100%;
+}
+
+.practice-case-view.is-dental .practice-stage-analysis .practice-stage-panel {
+  grid-template-columns: minmax(480px, 507fr) minmax(0, 772fr);
+  gap: clamp(32px, 4.3vw, 72px);
+}
+
+.practice-case-view.is-dental .practice-need-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+}
+
+.practice-case-view.is-dental .practice-need-card {
+  width: 100%;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-stage-panel {
+  grid-template-columns: minmax(560px, 618fr) minmax(0, 716fr);
+  gap: clamp(24px, 2.4vw, 40px);
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-hardware-body,
+.practice-case-view.is-dental .practice-stage-definition .practice-software-body {
+  width: 100%;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-hardware-body .practice-numbered-list {
+  width: 55%;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-software-body .practice-numbered-list {
+  width: 60%;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-hardware-figure {
+  left: 48%;
+  width: 52%;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-software-figure {
+  left: 51%;
+  width: 46%;
+}
+
+.practice-case-view.is-dental .practice-stage-design :is(.practice-flow-card, .practice-design-grid),
+.practice-case-view.is-dental .practice-stage-launch :is(.practice-launch-flow-card, .practice-maintenance-card) {
+  width: 100%;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow {
+  --practice-flow-gap: calc((100% - 541px) / 5);
+  grid-template-columns: 82px 90px 95px 75px 76px 123px;
+  gap: var(--practice-flow-gap);
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:not(:last-child)::after {
+  left: calc(100% + (var(--practice-flow-gap) - 40px) / 2);
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-design-grid {
+  grid-template-columns: minmax(0, 456fr) minmax(0, 456fr) minmax(380px, 422fr);
+  column-gap: clamp(20px, 2.3vw, 39px);
+}
+
+.practice-case-view.is-dental .practice-stage-design :is(
+  .practice-prototype-card,
+  .practice-design-card.has-split-text,
+  .practice-design-card:not(.practice-prototype-card):not(.practice-metrics-card):not(.has-split-text),
+  .practice-metrics-card
+) {
+  width: 100%;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow {
+  --practice-flow-gap: clamp(40px, 4.3vw, 72px);
+  grid-template-columns: 165fr 200fr 164fr 127fr 182fr 153fr;
+  gap: var(--practice-flow-gap);
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item:not(:last-child)::after {
+  left: calc(100% + (var(--practice-flow-gap) - 40px) / 2);
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-launch-flow .practice-flow-item p {
+  font-size: 12px;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-maintenance-card h3,
+.practice-case-view.is-dental .practice-stage-launch .practice-maintenance-card > p,
+.practice-case-view.is-dental .practice-stage-launch .practice-table-line {
+  width: min(1175px, 100%);
+}
+
+/* Screenshot corrections: copy fit, flow arrows and responsive media. */
+.practice-case-view.is-dental .practice-hero-grid {
+  grid-template-columns: minmax(700px, 1fr) minmax(220px, 280px) minmax(280px, 320px);
+  column-gap: clamp(20px, 2.2vw, 36px);
+}
+
+.practice-case-view.is-dental .practice-need-card p {
+  width: calc(100% + 20px);
+  max-width: none;
+  white-space: nowrap;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-hardware-figure {
+  left: 55%;
+  top: 14px;
+  width: 43%;
+  height: 280px;
+}
+
+.practice-case-view.is-dental .practice-stage-definition .practice-software-figure {
+  left: 59%;
+  top: 28px;
+  width: 38%;
+  height: 205px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-stage-panel {
+  height: 771px;
+  min-height: 771px;
+  grid-template-rows: 285px 329px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-design-grid {
+  height: 329px;
+  grid-template-rows: 200px 105px;
+  row-gap: 24px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-prototype-card,
+.practice-case-view.is-dental .practice-stage-design .practice-metrics-card {
+  height: 329px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-design-card.has-split-text {
+  height: 200px;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-design-card.has-split-text .practice-design-lead {
+  white-space: normal;
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow {
+  --practice-flow-gap: clamp(108px, 7.8vw, 154px);
+  gap: var(--practice-flow-gap);
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item h4 {
+  left: 50%;
+  width: 150px;
+  transform: translateX(-50%);
+}
+
+.practice-case-view.is-dental .practice-stage-design .practice-product-flow .practice-flow-item:not(:last-child)::after {
+  left: calc(100% + (var(--practice-flow-gap) - 40px) / 2);
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-maintenance-card {
+  padding-right: 24px;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-maintenance-card h3,
+.practice-case-view.is-dental .practice-stage-launch .practice-maintenance-card > p,
+.practice-case-view.is-dental .practice-stage-launch .practice-table-line {
+  width: 100%;
+  max-width: none;
+}
+
+.practice-case-view.is-dental .practice-stage-launch .practice-table-line {
+  overflow: visible;
+  font-size: 12px;
+  white-space: nowrap;
+}

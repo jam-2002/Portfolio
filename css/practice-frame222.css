@@ -1,0 +1,821 @@
+/* Frame 222 — Product Practice 2, navigation excluded. */
+.practice-case-view.is-education :is(.practice-case-hero, .practice-stage-stack) {
+  width: min(88.8vw, 1484px);
+}
+
+.practice-case-view.is-education .practice-edu-hero {
+  --practice-hero-grid-bottom: 0px;
+  padding: 100px 0 0;
+}
+
+.practice-case-view.is-education .practice-case-title {
+  height: 60px;
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.5;
+}
+
+.practice-case-view.is-education .practice-branch-row {
+  width: 1054px;
+  height: 128px;
+  grid-template-columns: 473px 473px;
+  gap: 108px;
+  max-width: none;
+  margin: 14px 0 0 -22px;
+}
+
+.practice-case-view.is-education .practice-branch-card {
+  width: 473px;
+  height: auto;
+  overflow: visible;
+}
+
+.practice-case-view.is-education .practice-branch-card:first-child {
+  opacity: 0.5;
+}
+
+.practice-case-view.is-education .practice-branch-card:nth-child(2) {
+  opacity: 1;
+}
+
+.practice-case-view.is-education .practice-branch-artwork img {
+  position: static;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.practice-case-view.is-education .practice-branch-artwork-copy {
+  top: 43%;
+  left: 30.1%;
+  gap: 0.1em;
+  transform: translateY(-50%);
+}
+
+.practice-case-view.is-education .practice-branch-artwork-copy strong {
+  font-size: clamp(1.05rem, 3.7cqw, 2.4rem);
+}
+
+.practice-case-view.is-education .practice-branch-artwork-copy span {
+  font-size: clamp(0.9rem, 2.9cqw, 1.9rem);
+}
+
+.practice-case-view.is-education .practice-edu-hero-grid {
+  width: 100%;
+  height: 452px;
+  grid-template-columns: minmax(0, 724fr) minmax(0, 744fr);
+  grid-template-rows: 350px 102px;
+  grid-template-areas:
+    "copy visual"
+    "tags info";
+  column-gap: 0;
+  row-gap: 0;
+  margin-top: 100px;
+}
+
+.practice-case-view.is-education .practice-edu-hero-copy {
+  width: 100%;
+  align-self: start;
+  margin-top: 40.5px;
+}
+
+.practice-case-view.is-education .practice-edu-eyebrow {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+.practice-case-view.is-education .practice-edu-hero-copy h1 {
+  height: 60px;
+  gap: 9px;
+  margin-top: 9px;
+  font-size: 40px;
+  line-height: 1.5;
+}
+
+.practice-case-view.is-education .practice-edu-hero-copy > p:not(.practice-edu-eyebrow) {
+  width: calc(100% + 56px);
+  max-width: none;
+  margin-top: 3px;
+  font-size: 20px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-education .practice-edu-tags {
+  align-self: start;
+  gap: 26px;
+  margin-top: 42px;
+}
+
+.practice-case-view.is-education .practice-edu-tags span {
+  flex: 0 0 136.85px;
+  min-height: 48px;
+  padding: 0 1.25rem;
+  border: 1.5px solid transparent;
+  border-radius: var(--r-pill);
+  background:
+    rgba(255, 255, 255, 0.15) padding-box,
+    var(--glass-border-gradient) border-box;
+  color: var(--practice-gray);
+  font-size: var(--fs-16);
+  font-weight: var(--weight-regular);
+  line-height: 1.4;
+  letter-spacing: var(--tracking-wide);
+  box-shadow:
+    0 12px 24px rgba(114, 128, 157, 0.05),
+    inset 0 0 5px 3px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.practice-case-view.is-education .practice-edu-hero-visual {
+  width: 100%;
+  height: 350px;
+  align-self: start;
+  display: grid;
+  place-items: center;
+}
+
+.practice-case-view.is-education .practice-edu-hero-visual img {
+  width: min(82%, 608px);
+  height: 350px;
+  margin: 0;
+  object-fit: contain;
+}
+
+.practice-case-view.is-education .practice-edu-info-card {
+  width: 100%;
+  height: 102px;
+  min-height: 102px;
+  grid-template-columns: 202fr 215fr 195fr;
+  column-gap: clamp(12px, 2vw, 34px);
+  justify-content: center;
+  padding: 17px clamp(16px, 2vw, 32px);
+}
+
+.practice-case-view.is-education .practice-edu-info-item {
+  grid-template-columns: 24px minmax(0, 1fr);
+  column-gap: 11px;
+  row-gap: 0;
+}
+
+.practice-case-view.is-education .practice-edu-info-item strong,
+.practice-case-view.is-education .practice-edu-info-item p {
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-education .practice-edu-info-item p {
+  margin-top: 5px;
+  color: var(--practice-gray);
+  font-size: 16px;
+}
+
+.practice-case-view.is-education .practice-edu-stage-stack {
+  margin-top: 60px;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-section-header {
+  left: 45px;
+  top: 43px;
+  gap: 15px;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-stage-panel {
+  height: 479px;
+  min-height: 479px;
+  padding: 114px 73px 40px 44px;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-two-column {
+  width: min(1295px, 100%);
+  height: 74px;
+  grid-template-columns: minmax(600px, 668fr) minmax(0, 559fr);
+  gap: clamp(24px, 4.1vw, 68px);
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-two-column p {
+  margin-top: 12px;
+  color: var(--practice-gray);
+  line-height: 2;
+  white-space: nowrap;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamics {
+  width: 100%;
+  height: 225px;
+  overflow: visible;
+  margin-top: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic-grid {
+  width: 100%;
+  height: 183px;
+  grid-template-columns: minmax(0, 455fr) minmax(0, 435fr) minmax(0, 411fr);
+  gap: clamp(20px, 1.9vw, 32px);
+  margin-top: 12px;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic {
+  height: 183px;
+  grid-template-rows: 24px 141px;
+  grid-template-areas:
+    "title title"
+    "media copy";
+  grid-template-columns: minmax(140px, 185px) minmax(0, 250px);
+  column-gap: 20px;
+  row-gap: 18px;
+  justify-content: start;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic:nth-child(2) {
+  grid-template-columns: minmax(125px, 159px) minmax(0, 250px);
+  column-gap: 20px;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic:nth-child(3) {
+  height: 179px;
+  grid-template-columns: minmax(110px, 144px) minmax(0, 250px);
+  grid-template-rows: 24px 133px;
+  column-gap: 17px;
+  row-gap: 22px;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic h4 {
+  height: 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic-media {
+  height: 141px;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic img {
+  width: 100%;
+  height: 141px;
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic:nth-child(3) .practice-edu-dynamic-media,
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic:nth-child(3) img {
+  height: 133px;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic:nth-child(3) img {
+  border-radius: 0;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic-divider {
+  border-top-width: 1px;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic-copy {
+  height: 102px;
+  align-self: center;
+  grid-template-rows: 48px 1px 24px;
+  gap: 14.5px;
+  padding: 0;
+}
+
+.practice-case-view.is-education .practice-edu-market :is(.practice-edu-dynamic-lead, .practice-edu-dynamic-note) {
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic-lead {
+  display: -webkit-box;
+  max-height: 48px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.practice-case-view.is-education .practice-edu-market .practice-edu-dynamic-note {
+  white-space: nowrap;
+}
+
+/* Frame 246 — second card / 趋势洞察. */
+.practice-case-view.is-education .practice-edu-stage-stack {
+  gap: 60px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-section-header {
+  left: 45px;
+  top: 31px;
+  gap: 9px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-stage-panel {
+  height: 514px;
+  min-height: 514px;
+  padding: 102px 31px 30px 44px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-trend-grid {
+  width: min(1405px, 100%);
+  height: 213px;
+  grid-template-columns: minmax(0, 550px) minmax(0, 769px);
+  gap: 16px;
+  align-items: center;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-trend-grid > .practice-edu-glass-card {
+  height: 213px;
+  min-height: 213px;
+  border-radius: 24px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-trend-grid > .practice-edu-glass-card:first-child {
+  padding: 24px 10px 23px 25px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-trend-grid > .practice-edu-glass-card:nth-child(2) {
+  padding: 18px 22px 18px 31px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-trend-grid > .practice-edu-glass-card:first-child > p {
+  width: 506px;
+  margin-top: 12px;
+  color: var(--practice-gray);
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-grid.is-three {
+  width: 506px;
+  height: 78px;
+  grid-template-columns: 116px 143px 143px;
+  gap: 52px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-grid.is-three .practice-edu-mini-card {
+  position: relative;
+  height: 78px;
+  row-gap: 6px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-grid.is-three .practice-edu-mini-card:nth-child(n + 2)::before {
+  position: absolute;
+  top: 0;
+  left: -26px;
+  height: 78px;
+  border-left: 1px dashed #528128;
+  content: "";
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-card-title {
+  height: 24px;
+  grid-template-columns: 24px max-content;
+  column-gap: 4px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-card p {
+  margin: 0;
+  color: var(--practice-gray);
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-combo-badge {
+  width: 660px;
+  max-width: 100%;
+  height: 40px;
+  min-height: 40px;
+  margin: 12px auto 0;
+  padding: 0;
+  border: 1px solid rgba(11, 172, 250, 0.5);
+  border-radius: 8px;
+  background: rgba(11, 172, 250, 0.3);
+  box-shadow:
+    0 12px 24px rgba(114, 128, 157, 0.05),
+    inset 0 0 5px 3px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-combo-badge strong {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-grid.is-two {
+  width: 700px;
+  height: 81px;
+  grid-template-columns: 285px 279px;
+  gap: 78px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-grid.is-two .practice-edu-mini-card {
+  position: relative;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-grid.is-two .practice-edu-mini-card:first-child {
+  height: 81px;
+  row-gap: 9px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-grid.is-two .practice-edu-mini-card:nth-child(2) {
+  height: 78px;
+  row-gap: 6px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-grid.is-two .practice-edu-mini-card:nth-child(2)::before {
+  position: absolute;
+  top: 0;
+  left: -39px;
+  height: 78px;
+  border-left: 1px dashed var(--practice-blue);
+  content: "";
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-grid.is-two .practice-edu-mini-card:first-child .practice-edu-mini-card-title {
+  column-gap: 6px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-mini-grid.is-two .practice-edu-mini-card:nth-child(2) .practice-edu-mini-card-title {
+  column-gap: 9px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-map-card {
+  width: min(1405px, 100%);
+  height: 144px;
+  min-height: 144px;
+  overflow: visible;
+  margin-top: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-map-card h3 {
+  height: 30px;
+  margin-left: 3px;
+}
+
+.practice-case-view.is-education .practice-edu-trend .practice-edu-map-trigger {
+  width: 100%;
+  height: 100px;
+  margin-top: 12px;
+  padding: 0;
+}
+
+/* Frame 276 — third card / 用户洞察与产品策略. */
+.practice-case-view.is-education .practice-edu-strategy .practice-section-header {
+  left: 45px;
+  top: 29px;
+  gap: 9px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-stage-panel {
+  height: 342px;
+  min-height: 342px;
+  padding: 100px 31px 28px 44px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-strategy-grid {
+  width: min(1407px, 100%);
+  height: 213px;
+  grid-template-columns: minmax(0, 463px) minmax(0, 437px) minmax(0, 475px);
+  gap: 16px;
+  align-items: center;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-strategy-grid > .practice-edu-glass-card {
+  height: 213px;
+  min-height: 213px;
+  border-radius: 24px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-strategy-grid > .practice-edu-glass-card:first-child {
+  padding: 24px 22px 23px 21px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-strategy-grid > .practice-edu-glass-card:nth-child(2) {
+  padding: 22px 28px 19px 29px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-policy-card {
+  padding: 23px 25px 34px 26px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-strategy-grid > .practice-edu-glass-card:first-child > p {
+  height: 32px;
+  margin-top: 12px;
+  color: var(--practice-black);
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-two {
+  width: 390px;
+  height: 78px;
+  grid-template-columns: 168px 192px;
+  gap: 30px;
+  align-items: end;
+  margin-top: 12px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-two .practice-edu-mini-card {
+  position: relative;
+  height: 78px;
+  row-gap: 6px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-two .practice-edu-mini-card:first-child .practice-edu-mini-card-title {
+  column-gap: 7px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-two .practice-edu-mini-card:first-child p {
+  width: 165px;
+  margin-left: 3px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-two .practice-edu-mini-card:nth-child(2) {
+  height: 76px;
+  row-gap: 4px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-two .practice-edu-mini-card:nth-child(2)::before {
+  position: absolute;
+  top: -2px;
+  left: -15px;
+  height: 78px;
+  border-left: 1px dashed #528128;
+  content: "";
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-two .practice-edu-mini-card:nth-child(2) .practice-edu-mini-card-title {
+  margin-left: 1px;
+  column-gap: 3px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-four {
+  position: relative;
+  width: 380px;
+  height: 128px;
+  grid-template-columns: 172px 184px;
+  grid-template-rows: 60px 60px;
+  gap: 8px 24px;
+  margin-top: 12px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-four::before {
+  position: absolute;
+  top: 7px;
+  left: 184px;
+  height: 114px;
+  border-left: 1px dashed var(--practice-blue);
+  content: "";
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-four .practice-edu-mini-card {
+  height: 60px;
+  row-gap: 12px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-four .practice-edu-mini-card:nth-child(1) {
+  grid-area: 1 / 1;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-four .practice-edu-mini-card:nth-child(2) {
+  grid-area: 2 / 1;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-four .practice-edu-mini-card:nth-child(3) {
+  grid-area: 1 / 2;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-four .practice-edu-mini-card:nth-child(4) {
+  grid-area: 2 / 2;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-four .practice-edu-mini-card-title {
+  column-gap: 6px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-four .practice-edu-mini-card:nth-child(n + 3) .practice-edu-mini-card-title {
+  column-gap: 8px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-mini-grid.is-four .practice-edu-mini-card p {
+  width: max-content;
+  white-space: nowrap;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-policy-card > h3 {
+  height: 30px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-policy-body {
+  width: 424px;
+  height: 112px;
+  display: grid;
+  grid-template-columns: 124px 280px;
+  gap: 20px;
+  align-items: start;
+  margin-top: 12px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-policy-card .practice-edu-policy-body img {
+  width: 124px;
+  height: 112px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-policy-copy {
+  width: 280px;
+  height: 112px;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-policy-lead {
+  height: 32px;
+  margin: 0;
+  color: var(--practice-black);
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+
+.practice-case-view.is-education .practice-edu-strategy .practice-edu-policy-note {
+  width: 225px;
+  height: 72px;
+  margin: 8px 0 0;
+  color: var(--practice-gray);
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+/* Frames 281 + 286 — fifth and sixth cards share one row. */
+.practice-case-view.is-education .practice-edu-final-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 624fr) minmax(0, 737fr);
+  gap: clamp(24px, 7.84vw, 131px);
+  align-items: start;
+}
+
+.practice-case-view.is-education .practice-edu-final-row > .practice-stage {
+  min-width: 0;
+  height: 342px;
+}
+
+.practice-case-view.is-education .practice-edu-final-row .practice-stage-panel {
+  height: 342px;
+  min-height: 342px;
+}
+
+.practice-case-view.is-education .practice-edu-testing .practice-section-header {
+  left: 32px;
+  top: 34px;
+  gap: 9px;
+}
+
+.practice-case-view.is-education .practice-edu-testing .practice-stage-panel {
+  padding: 97px 32px 32px;
+}
+
+.practice-case-view.is-education .practice-edu-testing-grid {
+  width: 100%;
+  height: 213px;
+  display: block;
+}
+
+.practice-case-view.is-education .practice-edu-test-scene {
+  width: 100%;
+  height: 213px;
+  grid-template-columns: minmax(0, 275fr) minmax(0, 293fr);
+  gap: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.practice-case-view.is-education .practice-edu-test-scene > div {
+  min-width: 0;
+  padding-top: 8px;
+}
+
+.practice-case-view.is-education .practice-edu-test-scene h3 {
+  margin: 0;
+}
+
+.practice-case-view.is-education .practice-edu-test-scene .practice-edu-test-date {
+  margin-top: 9px;
+}
+
+.practice-case-view.is-education .practice-edu-test-scene .practice-edu-test-copy {
+  max-width: 235px;
+  margin: 7px 0 0 1px;
+}
+
+.practice-case-view.is-education .practice-edu-test-scene-image {
+  width: 100%;
+  height: 213px;
+  max-height: none;
+  border-radius: 24px;
+}
+
+.practice-case-view.is-education .practice-edu-test-scene-image img {
+  object-fit: cover;
+  object-position: center 70%;
+}
+
+.practice-case-view.is-education .practice-edu-workflow .practice-section-header {
+  left: 45px;
+  top: 34px;
+  gap: 9px;
+}
+
+.practice-case-view.is-education .practice-edu-workflow .practice-stage-panel {
+  padding: 0;
+}
+
+.practice-case-view.is-education .practice-edu-workflow-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.practice-case-view.is-education .practice-edu-workflow-grid > .practice-edu-workflow-main {
+  position: absolute;
+  left: 6.11%;
+  top: 116px;
+  width: 40.71%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.practice-case-view.is-education .practice-edu-workflow-main h3 {
+  margin: 0 0 12px;
+}
+
+.practice-case-view.is-education .practice-edu-workflow-main p {
+  color: var(--practice-black);
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+.practice-case-view.is-education .practice-edu-workflow-preview {
+  position: absolute;
+  left: 59.57%;
+  top: 34px;
+  width: 35.14%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 259 / 294;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.practice-case-view.is-education .practice-edu-workflow-preview iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  border: 0;
+}

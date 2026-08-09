@@ -1,0 +1,689 @@
+body[data-current-view="practice-dental"] {
+  background: #edf3ee;
+}
+
+body[data-current-view="practice-dental"]::before {
+  opacity: 0;
+}
+
+body[data-current-view="practice-dental"]::after {
+  background: url("../asset/产品实践/背景.png") center top / cover fixed no-repeat;
+  opacity: 1;
+}
+
+body[data-current-view="practice-education"] {
+  background: #eef3f7;
+}
+
+body[data-current-view="practice-education"]::before {
+  opacity: 0;
+}
+
+body[data-current-view="practice-education"]::after {
+  background: url("../asset/产品实践/背景2 2.png") center bottom / cover fixed no-repeat;
+  opacity: 1;
+}
+
+body.has-practice-modal {
+  overflow: hidden;
+}
+
+.practice-case-view {
+  --practice-green: #3f764d;
+  --practice-gray: #505b53;
+  --practice-black: #050705;
+  --practice-muted: #748078;
+  --practice-soft: #edf3ee;
+  --practice-line: rgba(63, 118, 77, 0.16);
+  --practice-card-bg: rgba(255, 255, 255, 0.15);
+  --practice-content-card-bg: rgba(255, 255, 255, 0.15);
+  --practice-glass-bg: rgba(255, 255, 255, 0.15);
+  --practice-branch-card-bg: rgba(255, 255, 255, 0.72);
+  --practice-header-stick-top: clamp(0.7rem, 1.25vw, 1.35rem);
+  --practice-shadow: var(--glass-shadow);
+  --practice-shadow-strong: var(--practice-shadow);
+  --practice-inner-highlight: inset 0 0 5px 3px rgba(255, 255, 255, 0.15);
+  --practice-panel-highlight: inset 0 0 5px rgba(255, 255, 255, 0.15);
+  --practice-active-border: rgba(63, 118, 77, 0.9);
+  --practice-hero-grid-bottom: clamp(1.25rem, 2.2vw, 2.6rem);
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+  color: var(--practice-gray);
+  background: transparent;
+}
+
+.practice-case-view.is-education {
+  --practice-green: #0bacfa;
+  --practice-gray: #505b53;
+  --practice-black: #050705;
+  --practice-muted: #6c7770;
+  --practice-orange: #fe6205;
+  --practice-blue: #0bacfa;
+  --practice-card-bg: rgba(255, 255, 255, 0.15);
+  --practice-content-card-bg: rgba(255, 255, 255, 0.3);
+  --practice-glass-bg: rgba(255, 255, 255, 0.15);
+  --practice-active-border: #0bacfa;
+}
+
+.practice-case-view.is-active {
+  animation: practice-case-view-enter 620ms ease both;
+}
+
+@keyframes practice-case-view-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.practice-case-view::before {
+  content: none;
+}
+
+.practice-case-shell {
+  position: relative;
+  z-index: 1;
+  width: min(100%, calc(var(--page-max) + var(--pad-x) + var(--pad-x)));
+  margin: 0 auto;
+  padding: clamp(3rem, 4.7vw, 4.875rem) 0 clamp(4rem, 6vw, 6rem);
+}
+
+.practice-case-nav {
+  position: sticky;
+  top: var(--practice-header-stick-top);
+  z-index: 20;
+  isolation: isolate;
+  overflow: hidden;
+  width: min(88.8vw, 1484px);
+  min-height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 0 auto;
+  padding: 0 4.25rem;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--practice-glass-bg);
+  box-shadow:
+    var(--glass-shadow),
+    var(--inner-highlight);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  transition:
+    background-color 220ms ease,
+    backdrop-filter 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.practice-case-nav::before {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--glass-border-gradient);
+  content: "";
+  pointer-events: none;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.practice-case-nav::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.28)),
+    rgba(245, 249, 255, 0.14);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.practice-case-nav.is-pinned {
+  background: rgba(255, 255, 255, 0.46);
+  box-shadow:
+    0 18px 42px rgba(92, 112, 162, 0.12),
+    var(--inner-highlight);
+  backdrop-filter: blur(18px) saturate(128%);
+  -webkit-backdrop-filter: blur(18px) saturate(128%);
+  transform: scale(0.992);
+}
+
+.practice-case-nav.is-pinned::after {
+  opacity: 1;
+}
+
+.practice-case-nav > * {
+  position: relative;
+  z-index: 2;
+}
+
+.practice-case-brand {
+  flex: 0 0 auto;
+  background: linear-gradient(
+    90deg,
+    #3f764d 0%,
+    #4c8b5d 34%,
+    #79aa84 62%,
+    #d7e5da 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: var(--fs-20);
+  font-weight: var(--weight-semibold);
+  line-height: 1.5;
+  letter-spacing: var(--tracking-wide);
+  white-space: nowrap;
+}
+
+.practice-case-view.is-education .practice-case-brand {
+  background: linear-gradient(90deg, #fe6205 0%, #fa952e 34%, #0bacfa 72%, #cbeeff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.practice-case-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(2rem, 3.2vw, 3.1rem);
+  min-width: 0;
+  color: var(--practice-gray);
+  font-size: var(--fs-16);
+  font-weight: var(--weight-regular);
+  line-height: 1.3;
+  letter-spacing: var(--tracking-wide);
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.practice-case-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.practice-case-menu a {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 0.45rem 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.practice-case-menu a[aria-current="page"] {
+  color: var(--practice-green);
+  font-weight: var(--weight-semibold);
+}
+
+.practice-case-menu a[aria-current="page"]::after {
+  position: absolute;
+  left: 50%;
+  bottom: -0.45rem;
+  width: 5px;
+  height: 5px;
+  content: "";
+  border-radius: 50%;
+  background: var(--practice-green);
+  box-shadow: 0 0 16px rgba(63, 118, 77, 0.44);
+  transform: translateX(-50%);
+}
+
+.practice-case-hero,
+.practice-stage-stack {
+  width: min(89.2vw, 1492px);
+  margin: 0 auto;
+}
+
+#practice-dental-root {
+  opacity: 1;
+  transition:
+    opacity 440ms ease,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 440ms ease;
+}
+
+#practice-dental-root.is-switching-out {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(14px);
+}
+
+#practice-dental-root.is-switching-in {
+  animation: practice-case-enter 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes practice-case-enter {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.practice-case-hero {
+  padding: clamp(3rem, 4.7vw, 4.8rem) 0 var(--practice-hero-grid-bottom);
+}
+
+.practice-case-title {
+  color: var(--practice-green);
+  font-size: clamp(2rem, 2.4vw, 2.5rem);
+  font-weight: var(--weight-medium);
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+}
+
+.practice-branch-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, clamp(28rem, 30vw, 36rem)));
+  gap: clamp(2.5rem, 6.5vw, 8.5rem);
+  align-items: center;
+  justify-content: start;
+  margin-left: clamp(-2.2rem, -1.85vw, -1.2rem);
+  margin-top: clamp(1rem, 1.8vw, 1.75rem);
+}
+
+.practice-branch-card {
+  position: relative;
+  height: 91px;
+  min-height: 91px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 1.75rem;
+  overflow: hidden;
+  padding: 1.15rem 1.45rem 1.15rem 1.75rem;
+  border: 1.5px solid transparent;
+  border-radius: var(--r-card);
+  background:
+    linear-gradient(var(--practice-branch-card-bg), var(--practice-branch-card-bg)) padding-box,
+    var(--glass-border-gradient) border-box;
+  color: var(--practice-gray);
+  box-shadow:
+    var(--practice-shadow),
+    var(--practice-inner-highlight);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+button.practice-branch-card {
+  width: 100%;
+  cursor: default;
+}
+
+.practice-branch-card.is-active {
+  border: 0;
+  background: linear-gradient(var(--practice-branch-card-bg), var(--practice-branch-card-bg));
+  box-shadow:
+    var(--practice-shadow),
+    var(--practice-inner-highlight);
+}
+
+.practice-branch-card.is-active::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--practice-active-border) 0%, rgba(255, 255, 255, 0.92) 100%);
+  content: "";
+  pointer-events: none;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.practice-branch-card.is-active > * {
+  position: relative;
+  z-index: 2;
+}
+
+.practice-branch-artwork {
+  container-type: inline-size;
+  position: relative;
+  height: auto;
+  min-height: 0;
+  display: block;
+  overflow: visible;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.practice-branch-artwork.is-active {
+  background: transparent;
+  box-shadow: none;
+}
+
+.practice-branch-artwork.is-active::before {
+  display: none;
+}
+
+.practice-branch-artwork.is-inactive {
+  opacity: 0.5;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.practice-branch-artwork.is-inactive:hover {
+  opacity: 0.66;
+  transform: translateY(-1px);
+}
+
+.practice-branch-artwork img {
+  width: 100%;
+  display: block;
+  filter: none;
+}
+
+.practice-branch-artwork > .practice-branch-artwork-copy {
+  position: absolute;
+  left: 30.1%;
+  top: 43%;
+  z-index: 3;
+  width: max-content;
+  display: grid;
+  gap: 0.1em;
+  color: var(--practice-black);
+  line-height: 1.15;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.practice-case-view.is-education .practice-branch-artwork-copy {
+  left: 28.2%;
+  top: 43%;
+}
+
+.practice-branch-artwork-copy strong {
+  color: var(--practice-black);
+  font-size: clamp(1.05rem, 3.7cqw, 2.4rem);
+  font-weight: var(--weight-semibold);
+  line-height: 1.15;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+
+.practice-branch-artwork-copy span {
+  color: var(--practice-gray);
+  font-size: clamp(0.9rem, 2.9cqw, 1.9rem);
+  font-weight: var(--weight-regular);
+  line-height: 1.25;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+
+.practice-branch-card.is-pending {
+  color: rgba(80, 91, 83, 0.82);
+  opacity: 1;
+}
+
+.practice-branch-number {
+  min-width: 3.2rem;
+  color: var(--practice-green);
+  font-size: 2rem;
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.practice-branch-card.is-pending .practice-branch-number {
+  color: rgba(80, 91, 83, 0.82);
+}
+
+.practice-branch-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0;
+}
+
+.practice-branch-copy strong {
+  color: var(--practice-black);
+  font-size: var(--fs-20);
+  font-weight: var(--weight-semibold);
+  line-height: 1.25;
+  letter-spacing: var(--tracking-wide);
+}
+
+.practice-branch-copy span {
+  color: var(--practice-gray);
+  font-size: var(--fs-16);
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+  letter-spacing: var(--tracking-wide);
+}
+
+.practice-branch-image {
+  position: absolute;
+  right: 2.4rem;
+  bottom: -1rem;
+  width: 141px;
+  max-width: 30%;
+  filter: drop-shadow(0 12px 18px rgba(40, 66, 48, 0.14));
+  pointer-events: none;
+}
+
+.practice-branch-check {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1rem;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  color: var(--practice-green);
+  font-size: 32px;
+}
+
+.practice-lucide {
+  width: 1em;
+  height: 1em;
+  display: block;
+}
+
+.practice-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.58fr) minmax(24rem, 0.64fr);
+  gap: clamp(1.75rem, 3vw, 3.4rem);
+  align-items: end;
+  margin-top: clamp(2rem, 4.1vw, 4.7rem);
+}
+
+.practice-case-view.is-dental .practice-hero-grid {
+  align-items: start;
+  margin-top: clamp(1.15rem, 2vw, 2.25rem);
+}
+
+.practice-case-view.is-dental .practice-case-hero {
+  --practice-hero-grid-bottom: clamp(0rem, 0.25vw, 0.3rem);
+  padding-bottom: 0;
+}
+
+.practice-case-view.is-dental .practice-stage-stack {
+  margin-top: clamp(-10rem, -9vw, -8rem);
+}
+
+.practice-case-view.is-dental .practice-product-visual {
+  transform: translateY(calc(18.2rem - clamp(22rem, 29vw, 31rem)));
+}
+
+.practice-hero-copy {
+  min-width: 0;
+}
+
+.practice-hero-copy h1 {
+  width: auto;
+  max-width: none;
+  margin: 0;
+  background: none;
+  color: var(--practice-black);
+  font-size: clamp(2rem, 2.4vw, 2.5rem);
+  font-weight: var(--weight-semibold);
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+.practice-hero-copy h1 span {
+  color: var(--practice-green);
+}
+
+.practice-hero-copy > p {
+  max-width: 52rem;
+  margin-top: 1.3rem;
+  color: var(--practice-gray);
+  font-size: var(--fs-20);
+  font-weight: var(--weight-regular);
+  line-height: 2;
+  letter-spacing: 0.15em;
+}
+
+.practice-metric {
+  color: var(--practice-green);
+  font-weight: var(--weight-semibold);
+}
+
+.practice-tag-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: clamp(0.75rem, 1.5vw, 1.45rem);
+  margin-top: clamp(2.4rem, 4.6vw, 4.7rem);
+}
+
+.practice-case-view.is-dental .practice-tag-row {
+  margin-top: clamp(1.6rem, 2.5vw, 2.6rem);
+}
+
+.practice-tag-row span {
+  flex: 0 0 clamp(8.6rem, 9.4vw, 10rem);
+  min-width: 0;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.25rem;
+  border: 1.5px solid transparent;
+  border-radius: var(--r-pill);
+  background:
+    linear-gradient(var(--practice-card-bg), var(--practice-card-bg)) padding-box,
+    var(--glass-border-gradient) border-box;
+  color: var(--practice-gray);
+  font-size: var(--fs-16);
+  font-weight: var(--weight-regular);
+  line-height: 1.4;
+  letter-spacing: var(--tracking-wide);
+  box-shadow:
+    var(--practice-shadow),
+    var(--practice-inner-highlight);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.practice-product-visual {
+  position: relative;
+  min-height: clamp(22rem, 29vw, 31rem);
+  align-self: end;
+  margin: 0;
+}
+
+.practice-product-main,
+.practice-product-small {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 28px rgba(52, 69, 58, 0.14));
+}
+
+.practice-product-main {
+  left: 50%;
+  bottom: calc(-1 * var(--practice-hero-grid-bottom));
+  width: min(100%, 34.2rem);
+  transform: translateX(-50%);
+}
+
+.practice-product-small {
+  right: 2%;
+  bottom: calc(-1 * var(--practice-hero-grid-bottom));
+  width: min(34%, 11.2rem);
+}
+
+.practice-info-card {
+  min-height: 291px;
+  display: grid;
+  align-content: center;
+  gap: 1.2rem;
+  padding: clamp(1.4rem, 2vw, 1.8rem) clamp(1.4rem, 2.4vw, 2.25rem);
+  border: 1px solid transparent;
+  border-radius: var(--r-card);
+  background:
+    linear-gradient(var(--practice-card-bg), var(--practice-card-bg)) padding-box,
+    var(--glass-border-gradient) border-box;
+  box-shadow:
+    var(--practice-shadow),
+    var(--practice-inner-highlight);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.practice-info-item {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  color: var(--practice-green);
+}
+
+.practice-info-item > span {
+  display: grid;
+  place-items: center;
+  padding-top: 3px;
+  font-size: var(--fs-24);
+}
+
+.practice-info-item strong {
+  color: var(--practice-green);
+  font-size: var(--fs-20);
+  font-weight: var(--weight-semibold);
+  line-height: 1.5;
+  letter-spacing: var(--tracking-wide);
+}
+
+.practice-info-item p {
+  margin-top: 3px;
+  color: var(--practice-black);
+  font-size: var(--fs-16);
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
