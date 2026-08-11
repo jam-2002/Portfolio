@@ -323,7 +323,7 @@ function practiceEducationWorkflowSection() {
             <p>将问题内容、角色设定、卡牌字段、视觉样式等通过飞书多维表格进行整合。<br />使用者只需完成 点击制作+检查 即可完成产品生产。</p>
           </article>
           <article class="practice-edu-pdf-card practice-edu-workflow-preview">
-            <iframe src="./asset/产品实践/问题卡_副本.pdf#toolbar=0&navpanes=0" title="问题卡 PDF 预览"></iframe>
+            <iframe src="./asset/产品实践/问题卡_副本.pdf#page=1&zoom=page-fit&toolbar=0&navpanes=0" title="问题卡 PDF 预览"></iframe>
           </article>
         </div>
       </div>
