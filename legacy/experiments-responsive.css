@@ -200,14 +200,15 @@ h2 {
   border-bottom: 1px solid var(--line);
   margin-top: 6px;
 }
-.lab-work-action > span {
-  font:
-    14px/1 Arial,
-    sans-serif;
+.lab-work-action > svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
   transition: transform 0.2s;
 }
-a:hover .lab-work-action > span,
-.lab-video-card:hover .lab-work-action > span {
+a:hover .lab-work-action > svg,
+.lab-video-card:hover .lab-work-action > svg {
   transform: translate(2px, -2px);
 }
 .lab-play,
@@ -241,11 +242,10 @@ a:hover .lab-work-action > span,
   right: 12px;
   bottom: 12px;
 }
-.lab-jump::after {
-  content: "↗";
-  font:
-    18px Arial,
-    sans-serif;
+.lab-jump > svg {
+  width: 18px;
+  height: 18px;
+  display: block;
 }
 .lab-video-card {
   cursor: pointer;

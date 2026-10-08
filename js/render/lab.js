@@ -10,6 +10,7 @@ export function renderLab() {
       .replaceAll('"', "&quot;")
       .replaceAll("<", "&lt;")
       .replaceAll(">", "&gt;");
+  const externalArrow = `<svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M4 16 16 4M5 4h11v11" stroke="currentColor" stroke-width="1.3"/></svg>`;
   const mediaButton = (work) => `
     <span class="lab-media-shell">
       ${
@@ -17,7 +18,7 @@ export function renderLab() {
           ? `<video class="lab-media" preload="none" playsinline aria-label="${escape(work.title)}" poster="${work.media}"><source src="${work.video}" type="video/mp4" /></video>`
           : `<img class="lab-media" loading="lazy" decoding="async" src="${work.media}" alt="${escape(work.title)}" />`
       }
-      <span class="${work.video ? "lab-play" : "lab-jump"}" aria-hidden="true"></span>
+      <span class="${work.video ? "lab-play" : "lab-jump"}" aria-hidden="true">${work.video ? "" : externalArrow}</span>
     </span>`;
   const featureCard = (work, index) => {
     const content = `
@@ -26,7 +27,7 @@ export function renderLab() {
         <span class="lab-caption-meta"><span>${escape(work.credit)}</span><span>0${index + 1}</span></span>
         <strong>${escape(work.title)}</strong>
         <span class="lab-description">${escape(work.desc)}</span>
-        <span class="lab-work-action">${work.video ? "PLAY FILM" : "VIEW PROJECT"}<span aria-hidden="true">↗</span></span>
+        <span class="lab-work-action">${work.video ? "PLAY FILM" : "VIEW PROJECT"}${externalArrow}</span>
       </span>`;
     return work.href
       ? `<a class="lab-feature-card" href="${work.href}" target="_blank" rel="noreferrer">${content}</a>`
@@ -39,7 +40,7 @@ export function renderLab() {
         <span class="lab-kind">EDITING STUDY / 0${index + 1}</span>
         <strong>${escape(work.title)}</strong>
         <span class="lab-description">${escape(work.desc)}</span>
-        <span class="lab-work-action">WATCH FILM<span aria-hidden="true">↗</span></span>
+        <span class="lab-work-action">WATCH FILM${externalArrow}</span>
       </span>
     </a>`;
   const aigcCard = (card, index) => `
