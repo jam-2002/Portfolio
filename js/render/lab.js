@@ -54,8 +54,7 @@ export function renderLab() {
   const sectionTitle = (section) => `
     <header class="lab-section-heading">
       <span class="lab-section-index">CHAPTER ${section.index}</span>
-      <h2>${escape(section.english)}</h2>
-      <h3>${escape(section.heading)}</h3>
+      <h2>${escape(section.heading)}</h2>
       <span class="lab-section-date">${escape(section.date)}</span>
       <p>${escape(section.intro)}</p>
     </header>`;

@@ -39,7 +39,6 @@ export const labPage = {
       },
     ],
     index: "01",
-    english: "Moving images",
   },
   talk: {
     heading: "口播剪辑",
@@ -70,7 +69,6 @@ export const labPage = {
       },
     ],
     index: "02",
-    english: "Voice & rhythm",
   },
   aigc: {
     heading: "AI 概念展览",
@@ -90,6 +88,5 @@ export const labPage = {
       },
     ],
     index: "03",
-    english: "Beyond the screen",
   },
 };
