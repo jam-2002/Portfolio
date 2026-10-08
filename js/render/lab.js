@@ -1,159 +1,64 @@
-import { labItems, labPage } from "../data/lab.js?v=lab-intro-20260809a";
-import { hostName } from "../utils/format.js";
-
-let activeLabIndex = 0;
-let labWheelDelta = 0;
-let labPeekTimer;
-
-function labWorkCard(work) {
-  if (work.type === "video") {
-    return `
-      <article class="lab-work-card">
-        <video controls preload="metadata" playsinline poster="${work.poster || ""}">
-          <source src="${work.src}" type="video/mp4" />
-        </video>
-        <div class="lab-work-copy">
-          <p class="lab-work-type">Video</p>
-          <h4>${work.title}</h4>
-        </div>
-      </article>
-    `;
-  }
-
-  if (work.type === "image") {
-    return `
-      <article class="lab-work-card">
-        <img src="${work.src}" alt="${work.title}" />
-        <div class="lab-work-copy">
-          <p class="lab-work-type">Image</p>
-          <h4>${work.title}</h4>
-        </div>
-      </article>
-    `;
-  }
-
-  return `
-    <a class="lab-work-card" href="${work.href}" target="_blank" rel="noreferrer">
-      <span class="lab-work-cover">
-        ${work.cover ? `<img src="${work.cover}" alt="" />` : `<span>Preview</span>`}
-      </span>
-      <span class="lab-work-copy">
-        <span class="lab-work-type">${hostName(work.href)}</span>
-        <strong>${work.title}</strong>
-      </span>
-    </a>
-  `;
-}
-
-function labLogCard(log) {
-  return `
-    <article class="lab-log-card">
-      <span>${log.date}</span>
-      <h4>${log.title}</h4>
-      <p>${log.detail}</p>
-    </article>
-  `;
-}
-
-function labPanel(item, index) {
-  const works = item.works
-    ? `<div class="lab-work-grid">${item.works.map(labWorkCard).join("")}</div>`
-    : "";
-
-  const logs = item.logs
-    ? `<div class="lab-log-list">${item.logs.map(labLogCard).join("")}</div>`
-    : "";
-
-  return `
-    <article class="lab-panel lab-panel-${index}">
-      <div class="lab-panel-heading">
-        <span class="lab-index">${String(index + 1).padStart(2, "0")}</span>
-        ${item.meta ? `<p class="lab-meta">${item.meta}</p>` : ""}
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-      </div>
-      ${works}
-      ${logs}
-    </article>
-  `;
-}
-
-function labPeekPanel(item, index, position) {
-  if (!item) return "";
-  const firstWork = item.works?.[0];
-  const previewImage = firstWork?.poster || firstWork?.cover || firstWork?.src || "";
-
-  return `
-    <article class="lab-peek lab-peek-${position}" aria-hidden="true">
-      ${previewImage ? `<img src="${previewImage}" alt="" />` : ""}
-      <div>
-        <span>${String(index + 1).padStart(2, "0")}</span>
-        <strong>${item.title}</strong>
-      </div>
-    </article>
-  `;
-}
+import { labPage } from "../data/lab.js";
 
 export function renderLab() {
   const container = document.querySelector("#lab-items");
   if (!container) return;
 
-  const lineBreaks = (text) => text.replaceAll("\n", "<br />");
+  const escape = (text) =>
+    String(text)
+      .replaceAll("&", "&amp;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;");
   const mediaButton = (work) => `
     <span class="lab-media-shell">
       ${
         work.video
-          ? `<video class="lab-media" preload="metadata" playsinline poster="${work.media}">
-              <source src="${work.video}" type="video/mp4" />
-            </video>`
-          : `<img class="lab-media" src="${work.media}" alt="" />`
+          ? `<video class="lab-media" preload="none" playsinline aria-label="${escape(work.title)}" poster="${work.media}"><source src="${work.video}" type="video/mp4" /></video>`
+          : `<img class="lab-media" loading="lazy" decoding="async" src="${work.media}" alt="${escape(work.title)}" />`
       }
       <span class="${work.video ? "lab-play" : "lab-jump"}" aria-hidden="true"></span>
-    </span>
-  `;
-  const featureCard = (work) => {
+    </span>`;
+  const featureCard = (work, index) => {
     const content = `
       ${mediaButton(work)}
       <span class="lab-feature-copy">
-        <span class="lab-kind">${work.kind}</span>
-        <strong>${lineBreaks(work.title)}</strong>
-        <span>${lineBreaks(work.desc)}</span>
-      </span>
-    `;
+        <span class="lab-caption-meta"><span>${escape(work.credit)}</span><span>0${index + 1}</span></span>
+        <strong>${escape(work.title)}</strong>
+        <span class="lab-description">${escape(work.desc)}</span>
+        <span class="lab-work-action">${work.video ? "PLAY FILM" : "VIEW PROJECT"}<span aria-hidden="true">↗</span></span>
+      </span>`;
     return work.href
-      ? `<a class="lab-glass-card lab-feature-card" href="${work.href}" target="_blank" rel="noreferrer">${content}</a>`
-      : `<article class="lab-glass-card lab-feature-card lab-video-card" tabindex="0">${content}</article>`;
+      ? `<a class="lab-feature-card" href="${work.href}" target="_blank" rel="noreferrer">${content}</a>`
+      : `<article class="lab-feature-card lab-video-card" tabindex="0" aria-label="Play ${escape(work.title)}">${content}</article>`;
   };
-  const talkCard = (work) => `
-    <a class="lab-glass-card lab-talk-card" href="${work.href}" target="_blank" rel="noreferrer">
-      <span class="lab-talk-cover">
-        <img src="${work.media}" alt="" />
-        <span class="lab-jump lab-arrow" aria-hidden="true"></span>
-      </span>
+  const talkCard = (work, index) => `
+    <a class="lab-talk-card" href="${work.href}" target="_blank" rel="noreferrer">
+      <span class="lab-talk-cover"><img loading="lazy" decoding="async" src="${work.media}" alt="${escape(work.title)}" /></span>
       <span class="lab-talk-copy">
-        <span class="lab-kind">${work.kind}</span>
-        <strong>${lineBreaks(work.title)}</strong>
-        <span>${work.desc}</span>
+        <span class="lab-kind">EDITING STUDY / 0${index + 1}</span>
+        <strong>${escape(work.title)}</strong>
+        <span class="lab-description">${escape(work.desc)}</span>
+        <span class="lab-work-action">WATCH FILM<span aria-hidden="true">↗</span></span>
       </span>
-    </a>
-  `;
-  const aigcCard = (card) => `
-    <article class="lab-glass-card lab-aigc-card">
-      <img class="lab-aigc-ornament" src="${card.visual}" alt="" />
-      <h4>${card.title}</h4>
-      <p>${card.desc}</p>
-      <img class="lab-aigc-photo" src="${card.image}" alt="" />
-    </article>
-  `;
+    </a>`;
+  const aigcCard = (card, index) => `
+    <figure class="lab-aigc-card">
+      <img loading="lazy" decoding="async" class="lab-aigc-photo" src="${card.image}" alt="${escape(card.title)}展览现场" />
+      <figcaption>
+        <span class="lab-kind">EXHIBITION / 0${index + 1}</span>
+        <h4>${escape(card.title)}</h4>
+        <p class="lab-description">${escape(card.desc)}</p>
+      </figcaption>
+    </figure>`;
   const sectionTitle = (section) => `
-    <div class="lab-section-heading">
-      <div>
-        <h3>${section.heading}</h3>
-        <span>${section.date}</span>
-      </div>
-      <p>${section.intro}</p>
-    </div>
-  `;
+    <header class="lab-section-heading">
+      <span class="lab-section-index">CHAPTER ${section.index}</span>
+      <h2>${escape(section.english)}</h2>
+      <h3>${escape(section.heading)}</h3>
+      <span class="lab-section-date">${escape(section.date)}</span>
+      <p>${escape(section.intro)}</p>
+    </header>`;
 
   container.innerHTML = `
     <div class="lab-scroll-page">
@@ -175,9 +80,6 @@ export function renderLab() {
         ${sectionTitle(labPage.aigc)}
         <div class="lab-aigc-grid">
           ${labPage.aigc.cards.map(aigcCard).join("")}
-          <article class="lab-glass-card lab-aigc-banner">
-            <img src="${labPage.aigc.banner}" alt="" />
-          </article>
         </div>
       </section>
     </div>
@@ -186,26 +88,21 @@ export function renderLab() {
   container.querySelectorAll(".lab-video-card").forEach((card) => {
     const video = card.querySelector("video");
     if (!video) return;
-    const play = () => {
+    const play = (event) => {
+      if (event.target === video && video.controls) return;
       video.controls = true;
       card.classList.add("is-playing");
-      video.play();
+      video.play().catch(() => {
+        card.classList.remove("is-playing");
+      });
     };
     card.addEventListener("click", play);
     card.addEventListener("keydown", (event) => {
+      if (event.target === video && video.controls) return;
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        play();
+        play(event);
       }
     });
   });
-}
-
-export function setActiveLab(index) {
-  const nextIndex = Math.max(0, Math.min(labItems.length - 1, index));
-  if (nextIndex === activeLabIndex) return;
-  activeLabIndex = nextIndex;
-  labWheelDelta = 0;
-  window.clearTimeout(labPeekTimer);
-  renderLab();
 }
