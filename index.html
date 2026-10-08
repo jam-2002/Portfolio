@@ -11,11 +11,16 @@
     <title>YUHANG JIN</title>
     <link rel="stylesheet" href="./loading.css" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <script type="module" crossorigin src="./assets/index-Ce1lWhVp.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-FynHsN9o.css">
+    <script type="module" crossorigin src="./assets/index-COqJLlLy.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BpEpdh6J.css">
   </head>
   <body>
-    <div id="portfolio-loader" role="region" aria-label="Loading portfolio">
+    <div
+      id="portfolio-loader"
+      role="region"
+      aria-label="Loading portfolio"
+      aria-busy="true"
+    >
       <header>
         <p class="loader-name">YUHANG JIN</p>
         <span class="loader-edition">A PERSONAL COLLECTION · 2026</span>
@@ -33,9 +38,10 @@
         </div>
       </div>
       <footer class="loader-footer">
-        <button class="loader-skip" type="button">
-          ENTER WHEN YOU’RE READY ↗
-        </button>
+        <div class="loader-actions" hidden>
+          <button class="loader-retry" type="button">TRY AGAIN ↗</button>
+          <button class="loader-back" type="button">BACK TO COLLECTION</button>
+        </div>
       </footer>
     </div>
     <main id="app" tabindex="-1"></main>

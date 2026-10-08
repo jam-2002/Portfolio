@@ -11,7 +11,7 @@
   transition:
     opacity 0.45s,
     visibility 0.45s;
-  font-family: Arial, sans-serif;
+  font-family: Inter, Arial, sans-serif;
   overflow: hidden;
 }
 #portfolio-loader.is-complete {
@@ -20,7 +20,7 @@
   pointer-events: none;
 }
 .loader-name {
-  font-family: Georgia, serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 24px;
   font-weight: 400;
   letter-spacing: 0.12em;
@@ -72,7 +72,8 @@
 }
 .loader-title {
   font:
-    400 clamp(31px, 4vw, 46px)/1.08 Georgia,
+    400 clamp(31px, 4vw, 46px)/1.08 "Cormorant Garamond",
+    Georgia,
     serif;
   white-space: pre-line;
   letter-spacing: -0.035em;
@@ -80,7 +81,8 @@
 }
 .loader-note {
   font:
-    italic 16px/1.5 Georgia,
+    italic 18px/1.5 "Cormorant Garamond",
+    Georgia,
     serif;
   color: #b2afa7;
   margin: 0 0 45px;
@@ -110,7 +112,7 @@
   letter-spacing: 0.15em;
   color: #b2afa7;
 }
-.loader-skip {
+.loader-actions button {
   background: none;
   border: 0;
   color: #b2afa7;
@@ -121,10 +123,10 @@
   cursor: pointer;
   padding: 14px;
 }
-.loader-skip:hover {
+.loader-actions button:hover {
   color: #fff;
 }
-.loader-skip:focus-visible {
+.loader-actions button:focus-visible {
   outline: 1px solid #f3f0e9;
   outline-offset: 5px;
 }
@@ -176,4 +178,22 @@
 #portfolio-loader.is-complete > * {
   opacity: 0;
   transition: opacity 0.12s;
+}
+
+#portfolio-loader[hidden],
+.loader-actions[hidden] {
+  display: none;
+}
+.loader-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+#portfolio-loader.has-error .loader-book i {
+  animation-play-state: paused;
+}
+.loader-title {
+  max-width: 800px;
+  text-wrap: balance;
 }
