@@ -1,9 +1,22 @@
 export const labPage = {
+  apps: {
+    heading: "往期 APP 设计",
+    date: "2024–2025",
+    index: "01",
+    works: [
+      {
+        title: "STEPBEATS  跟随你的节奏奔跑",
+        media: "./asset/兴趣实验/Frame 309.png",
+      },
+      {
+        title: "智农 一体化智慧农业管理助手",
+        media: "./asset/兴趣实验/Frame 310.png",
+      },
+    ],
+  },
   official: {
     heading: "AI 官方文宣",
     date: "2024.09 - 2026.02",
-    intro:
-      "与中央广播电视台、教育部新闻办公室、浙江大学宣传部等合作，以 AI 影像探索文化与教育内容的表达。",
     works: [
       {
         kind: "VIDEO",
@@ -38,13 +51,11 @@ export const labPage = {
         credit: "浙江大学 · 校庆影像",
       },
     ],
-    index: "01",
+    index: "02",
   },
   talk: {
     heading: "口播剪辑",
     date: "2025.08 - 2025.10",
-    intro:
-      "与创意书法艺术家朱敬一合作，在艺术、品牌与流行文化的话题中，探索口播的叙事节奏。",
     works: [
       {
         kind: "LINK",
@@ -66,25 +77,6 @@ export const labPage = {
         desc: "从天才少女到 Z 世代，观察审美背后的情绪共鸣。",
         media: "./asset/兴趣实验/天才少女靠%22丧美学%22征服全球!.png",
         href: "https://weixin.qq.com/sph/AsRWG210mH",
-      },
-    ],
-    index: "02",
-  },
-  aigc: {
-    heading: "AI 概念展览",
-    date: "2024.06",
-    intro:
-      "杭州 · 西溪银泰城 1F。将 AI 创作带入实体空间，通过纸质物料与现场体验，连接图像和观众。",
-    cards: [
-      {
-        title: "AIGC 物料",
-        desc: "从 AI 图像到纸质物料与周边，构建展览的视觉氛围。",
-        image: "./asset/兴趣实验/page-3-image-5.png",
-      },
-      {
-        title: "AI 创作体验",
-        desc: "将生成工具带到现场，让观众参与创作。",
-        image: "./asset/兴趣实验/page-3-image-6.png",
       },
     ],
     index: "03",
