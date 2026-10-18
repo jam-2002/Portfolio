@@ -27,6 +27,7 @@
       renderLab();
       for (const id of ["apps", "official", "talk"])
         document.querySelector(`.lab-${id}-section`).id = id;
+      window.parent.postMessage("side-projects-ready", window.location.origin);
     </script>
   </body>
 </html>
